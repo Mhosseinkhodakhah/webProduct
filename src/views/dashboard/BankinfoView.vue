@@ -653,11 +653,11 @@ const withdraw = async () => {
   }
 };
 
-const validatePrice = [
-  (v) => !!v || "مقدار ورودی نمی‌تواند خالی باشد",
-  (v) => /^\d+$/.test(v.replace(/,/g, "")) || "فقط عدد مجاز است",
-  (v) => parseInt(v.replace(/,/g, "")) > 99999 || "",
-];
+// const validatePrice = [
+//   (v) => !!v || "مقدار ورودی نمی‌تواند خالی باشد",
+//   (v) => /^\d+$/.test(v.replace(/,/g, "")) || "فقط عدد مجاز است",
+//   (v) => parseInt(v.replace(/,/g, "")) > 99999 || "",
+// ];
 
 const isValidcharge = computed(() => {
   const amount = parseFloat(priceAmount.value.replace(/,/g, ""));
