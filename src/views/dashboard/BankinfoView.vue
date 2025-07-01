@@ -271,9 +271,9 @@
             :rules="validatePrice"
             @input="limitInput"
           ></v-text-field>
-          <div v-if="priceAmount">
+          <!-- <div v-if="priceAmount">
             <p class="amount-word">{{ DepositeAmountInWords }}</p>
-          </div>
+          </div> -->
           <v-select
             v-model="cartId"
             :loading="cartsLoading"
@@ -773,18 +773,18 @@ const amountInWords = computed(() => {
   return "";
 });
 
-const DepositeAmountInWords = computed(() => {
-  if (priceAmount.value) {
-    const amountWithoutCommas = priceAmount.value.replace(/,/g, "");
-    const amountInRial = parseInt(amountWithoutCommas, 10);
-    if (amountInRial < 1) {
-      return "کمتر از یک تومان";
-    }
+// const DepositeAmountInWords = computed(() => {
+//   if (priceAmount.value) {
+//     const amountWithoutCommas = priceAmount.value.replace(/,/g, "");
+//     const amountInRial = parseInt(amountWithoutCommas, 10);
+//     if (amountInRial < 1) {
+//       return "کمتر از یک تومان";
+//     }
 
-    return numberToWords(Math.floor(amountInRial)) + " تومان";
-  }
-  return "";
-});
+//     return numberToWords(Math.floor(amountInRial)) + " تومان";
+//   }
+//   return "";
+// });
 
 watch(withdrawDialog, (newValue) => {
   if (!newValue) {
