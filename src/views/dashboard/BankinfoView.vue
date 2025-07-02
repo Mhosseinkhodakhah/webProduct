@@ -261,6 +261,7 @@
           v-model="isValidcharge"
           @submit.prevent="behpardakhtDeposit"
         >
+          <p class="my-5">تست کیبورد 1</p>
           <v-text-field
             v-model="priceAmount"
             variant="outlined"
@@ -653,11 +654,11 @@ const withdraw = async () => {
   }
 };
 
-// const validatePrice = [
-//   (v) => !!v || "مقدار ورودی نمی‌تواند خالی باشد",
-//   (v) => /^\d+$/.test(v.replace(/,/g, "")) || "فقط عدد مجاز است",
-//   (v) => parseInt(v.replace(/,/g, "")) > 99999 || "",
-// ];
+const validatePrice = [
+  (v) => !!v || "مقدار ورودی نمی‌تواند خالی باشد",
+  (v) => /^\d+$/.test(v.replace(/,/g, "")) || "فقط عدد مجاز است",
+  (v) => parseInt(v.replace(/,/g, "")) > 99999 || "",
+];
 
 const isValidcharge = computed(() => {
   const amount = parseFloat(priceAmount.value.replace(/,/g, ""));
@@ -780,7 +781,6 @@ const amountInWords = computed(() => {
 //     if (amountInRial < 1) {
 //       return "کمتر از یک تومان";
 //     }
-
 //     return numberToWords(Math.floor(amountInRial)) + " تومان";
 //   }
 //   return "";
